@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ulang Tahun Pertama Lavanya 🎉</title>
+<style>
+    body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(#ffe1ec, #fff0f5);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    header {
+        padding: 20px;
+        background-color: #ffb6c1;
+        color: white;
+        font-size: 1.8em;
+        font-weight: bold;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+    .foto-lavanya {
+        margin-top: 20px;
+    }
+    .foto-lavanya img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 6px solid #ff8fab;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    .detail-acara {
+        background: #fff;
+        margin: 30px auto;
+        padding: 20px;
+        border-radius: 12px;
+        width: 85%;
+        max-width: 500px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .detail-acara h2 {
+        color: #ff4d6d;
+    }
+    .countdown {
+        font-size: 1.5em;
+        margin: 20px 0;
+        color: #ff4d6d;
+    }
+    .rsvp-btn {
+        display: inline-block;
+        background: #ff4d6d;
+        color: white;
+        padding: 14px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .rsvp-btn:hover {
+        background: #ff6f91;
+    }
+    footer {
+        margin-top: 30px;
+        padding: 15px;
+        background: #ffb6c1;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<header>🎀 Ulang Tahun Pertama Lavanya 🎀</header>
+
+<div class="foto-lavanya">
+    <img src="FOTO_LAVANYA_EDIT.jpg" alt="Lavanya">
+</div>
+
+<div class="detail-acara">
+    <h2>🎉 Ayo Rayakan Bersama! 🎉</h2>
+    <p><strong>📅 Tanggal:</strong> Jumat, 22 Agustus 2025</p>
+    <p><strong>🕘 Waktu:</strong> 09.00 WIB</p>
+    <p><strong>📍 Tempat:</strong> Rumahku</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <a href="#form-rsvp" class="rsvp-btn">Hadiri Acara Ulang Tahun Pertamaku!</a>
+</div>
+
+<div id="form-rsvp" class="detail-acara">
+    <h2>Konfirmasi Kehadiran</h2>
+    <form>
+        <input type="text" placeholder="Nama Lengkap" required style="padding:10px; width:80%; margin-bottom:10px;"><br>
+        <select required style="padding:10px; width:80%; margin-bottom:10px;">
+            <option value="">Pilih Kehadiran</option>
+            <option value="hadir">Hadir</option>
+            <option value="tidak_hadir">Tidak Hadir</option>
+        </select><br>
+        <button type="submit" style="padding:10px 20px; background:#ff4d6d; color:white; border:none; border-radius:5px;">Kirim</button>
+    </form>
+</div>
+
+<footer>
+    ❤️ Kami tak sabar merayakan bersama kalian! ❤️
+</footer>
+
+<script>
+    // Countdown Timer
+    const eventDate = new Date("Aug 22, 2025 09:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.innerHTML = `⏳ ${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+
+        if (distance < 0) {
+            clearInterval(timer);
+            countdownEl.innerHTML = "🎉 Hari ini Lavanya Berulang Tahun! 🎉";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
